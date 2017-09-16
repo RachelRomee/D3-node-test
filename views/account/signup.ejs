@@ -1,0 +1,13 @@
+<%- include('../partials/_head.ejs') %>
+
+  <h1>Signup</h1>
+
+  <!-- !! Post for Node.JS post handling (body-parser) define [method = post] -->
+ <form method="post">
+   <input type="text" name="username" placeholder="Choose a username" />
+   <input type="email" name="email" placeholder="Fill in your email" />
+   <input type="password" name="password" placeholder="Choose a password" />
+   <input type="submit" value="Signup" />
+ </form>
+
+<%- include('../partials/_foot.ejs') %>
