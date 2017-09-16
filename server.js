@@ -24,7 +24,7 @@ app.use(session({
 /* MONGODB CONFIGURATION
 ----------------------------------------- */
 const MongoClient = require("mongodb").MongoClient;
-const dbConfig = process.env.MONGODB_URL;
+const dbConfig = process.env.MONGODB_URL; // Update for all apps (URL in .env, set pw & username)
 
 MongoClient.connect(dbConfig, (err, database) => {
   if (err)
@@ -34,7 +34,7 @@ MongoClient.connect(dbConfig, (err, database) => {
 
 /* SET PORT
 ----------------------------------------- */
-const port = process.env.PORT || 3000; // Set port through .env, if not there use 3000. Digital ocean, set PORT=80 in .env (Heroku auto), check Amazon
+const port = process.env.PORT || 3002; // Set port through .env, if not there use 3000. Digital ocean, set PORT=80 in .env (Heroku auto), check Amazon
 
 /* ENABLE CACHE AND COMPRESSION
 ----------------------------------------- */
@@ -44,6 +44,7 @@ app.use(compression()); // NodeJS compression, package for reducing filesize whi
 /* LOAD ALL ROUTERS
 ----------------------------------------- */
 const indexRouter = require('./routes/index');
+const accountRouter = require('./routes/account');
 
 /* MIDDLEWARE FOR THE VIEW ENGINE
 ----------------------------------------- */
@@ -59,12 +60,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 ----------------------------------------- */
 app.use(express.static('public')); // For server static files
 app.use('/', indexRouter);
+app.use('/account', accountRouter);
 
 /* 404 PAGE
 ----------------------------------------- */
 app.enable('verbose errors'); // If /... doesn't exist as route, always render 404 page.
 app.use(function(req, res, next) {
-  res.render('error/404');
+  res.render('errors/404');
 });
 
 /* START THE NPM SERVER

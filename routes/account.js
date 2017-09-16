@@ -2,7 +2,7 @@
 ----------------------------------------- */
 const express = require('express');
 const router = express.Router();
-const bodyParser = require('body-parser'); // Always load body-parser in any route
+const bodyParser = require('body-parser');
 
 /* INDEX ROUTE
 ----------------------------------------- */
