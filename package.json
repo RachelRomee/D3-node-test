@@ -1,0 +1,28 @@
+{
+  "name": "rachel-d3",
+  "version": "1.0.0",
+  "description": "D3 Test project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://RachelRomee@github.com/RachelRomee/D3-node-test.git"
+  },
+  "author": "Rachel Romée",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RachelRomee/D3-node-test/issues"
+  },
+  "homepage": "https://github.com/RachelRomee/D3-node-test#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-sass": "^3.1.0"
+  }
+}
